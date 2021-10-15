@@ -17,4 +17,4 @@ mysql studena  -se "SELECT Date,Volume FROM volume  ;">/home/rnz/Pictures/Pernik
  #gnuplot -e "Date1='2021-01-01';Date2='2021-09-22'" plot_studena.gp 
  /usr/bin/gnuplot -e "Date1='$YMD1';Date2='$YMD2';HPix=1200;PNGFile='/home/rnz/Pictures/Pernik/Razni/output.png'" ~/Pictures/Pernik/scripts/plot_scripts/plot_studena.gp 
 
-
+#Dinamic VARS picture 2
