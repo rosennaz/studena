@@ -21,7 +21,7 @@ cd $WDIR
 #Extracting water volume, influx and outflux data
 VOL=`/usr/bin/html2text $INFILE | /bin/grep  "водният обем" | /usr/bin/awk 'BEGIN {FS=" ";OFS=""}{print $7,$8,$9}'`
 INFLUX=`/usr/bin/html2text $INFILE  | /bin/grep  "Отчетени са : приток –" | /usr/bin/awk -F " " '{print $6}'`
-OUTFLUX=`/usr/bin/html2text $INFILE  | /bin/grep  "Отчетени са : приток –" | /usr/bin/awk -F " " '{print $11}'`
+OUTFLUX=`/usr/bin/html2text $INFILE  | /bin/grep  "Отчетени са : приток –" | /usr/bin/awk -F " " '{print $9}'`
 
 echo Vol-$VOL,Influx-$INFLUX,Outflux-$OUTFLUX
 #Copy extracted values into files

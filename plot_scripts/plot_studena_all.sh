@@ -8,14 +8,12 @@
 # the command "test" shows lines end patterns examples
 
 
-
 set title 'Воден обем язовир "Студена"'
 
 set xdata time 
 set timefmt "%Y-%m-%d"
 
-#set xrange ["2019-11-01":"2021-09-23"] noreverse nowriteback
-set xrange ["$1":"$2"] noreverse nowriteback
+set xrange ["2019-11-01":"2021-07-01"] noreverse nowriteback
 
 set xlabel "Дата"
 set xtics rotate
@@ -49,14 +47,5 @@ plot  '/home/rnz/Pictures/Pernik/Razni/test.csv' using 1:($2/1000000) with boxes
 
 
 # set term png          # size 800,600   (will produce .png output)
-#set terminal png size 400,300 enhanced font "Helvetica,20"
-#set output 'output.png'
-
-#To save Gnuplot output as JPG format:
-
-#set terminal jpg color enhanced "Helvetica" 20
-#set output "output.jpg"
-
-
 # set output "printme.png" # creates an empty file
 # replot                       #and replots all above into it  
