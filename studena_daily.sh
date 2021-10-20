@@ -1,6 +1,7 @@
 #!/bin/bash
-
-#Script for storing water volume of dam Studena in CSV file and into MySQL
+#### Do not run manually. Wil increment Database!
+#Script for downloading storing water volume of dam Studena in CSV file and into MySQL 
+# and start the script to plot the data 
 
 WDIR="/home/rnz/Pictures/Pernik/scripts"
 INFILE=$WDIR/index.html
@@ -45,5 +46,9 @@ echo Vol1-$VOL1,Vol2-$VOL2,DIF-$DIF
 
 #Updates database with real influx by differrence from previous day
 /usr/bin/mysql studena -se "UPDATE  volume SET Diff_flux = '$DIF' WHERE Date='$DATE';"
+
+sleep 5
+#Plotting the data  to ~/Music/Jpgs    
+/bin/bash /home/rnz/Pictures/Pernik/scripts/plot_scripts/sql_studena_all.sh
 
 

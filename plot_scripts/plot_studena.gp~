@@ -27,10 +27,10 @@ set timefmt "%Y-%m-%d"
 #set xrange ["2019-11-01":"2021-09-23"] noreverse nowriteback
 set xrange [Date1:Date2] noreverse nowriteback
 
-set xlabel "Дата"
-
-set  xtics Date1,2592000,Date2 rotate nomirror
-set format x "%b %Y"
+set xlabel "Дата" offset 0,-3
+####set  xtics Date1,2592000,Date2 rotate by 45 center nomirror offset 0,-2    ### Un example
+set  xtics Date1,2592000,Date2 rotate by 70 center nomirror offset 0,-2
+set format x "%d %b %Y"
 
 set grid xtics linestyle -1
 
@@ -52,17 +52,18 @@ set grid y2tics linestyle -1
 set datafile separator "\t"
 
 unset key # not show file path and name on the plot
-set boxwidth 0.3 relative
-set style fill  solid 1.0
+#unset colorbox
+set boxwidth 0.45 relative
+set style fill transparent 0.5 solid 0.8 noborder
 
-set terminal png size HPix,400 
-set output '/home/rnz/Pictures/Pernik/Razni/output.png'
+set terminal png size HPix,400  
+set output   PNGFile    #'/home/rnz/Pictures/Pernik/Razni/output.png'  #PNGFile
 #set format y "%2.0t{/Symbol \327}10^{%L}" -- variant 
 #set datafile /home/rnz/Pictures/Pernik/Razni/test.csv
 
 plot  '/home/rnz/Pictures/Pernik/Razni/test.csv' using 1:($2/1000000) with boxes lc rgb  "blue"  # , 25519100 lc rgb "red" title "Dam Capacity"
 
-
+################ Working example# plot  '/home/rnz/Pictures/Pernik/Razni/test.csv' using 1:($2/1000000) with boxes lc rgb  "blue"  # , 25519100 lc rgb "red" title "Dam Capacity"
 # set term png          # size 800,600   (will produce .png output)
 #set terminal png size 400,300 enhanced font "Helvetica,20"
 #set output 'output.png'
